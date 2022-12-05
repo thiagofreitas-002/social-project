@@ -6,6 +6,7 @@ injectGlobal`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #9FADBD;
   }
 
   //? font:size: 16px; (Desktop)
@@ -27,7 +28,7 @@ injectGlobal`
   }
 
   body, input, textarea, button {
-    font-family: "Poppins", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
   }
 
@@ -44,16 +45,11 @@ injectGlobal`
     cursor: not-allowed;
   }
 
-  .react-modal-overlay {
-    background: rgba(0, 0, 0, 0.5);
-
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-
+  #root {
     display: grid;
-    place-items: center;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
   }
 `
