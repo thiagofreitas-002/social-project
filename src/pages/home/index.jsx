@@ -1,4 +1,6 @@
-import { Button } from '../../components/Button'
+import { Link } from 'react-router-dom'
+
+import HandClick from '../../assets/iconhandclick.png'
 import * as C from './styles'
 
 export function Home() {
@@ -11,9 +13,10 @@ export function Home() {
         </h1>
       </div>
 
-      <div className="button-container">
-        <Button />
-      </div>
+      <C.Button>
+        <img src={HandClick} alt="" />
+        <Link to={'/test'}>Noticias</Link>
+      </C.Button>
     </C.Container>
   )
 }

@@ -12,16 +12,20 @@ injectGlobal`
 
   //? font:size: 16px; (Desktop)
   html {
-    @media (max-width: 1366px) {
+    @media (max-width: 1440px) {
       font-size: 93.75%; //! 15px
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       font-size: 87.5%; //! 14px
+    }
+
+    @media (max-width: 768px) {
+      font-size: 81.25%; //! 13px
     }
     
     @media (max-width: 425px) {
-      font-size: 81.25%;
+      font-size: 75%; //! 12px
     }
   }
 
