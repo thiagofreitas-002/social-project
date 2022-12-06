@@ -32,7 +32,7 @@ injectGlobal`
   }
 
   body, input, textarea, button {
-    font-family: "Roboto", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
   }
 
