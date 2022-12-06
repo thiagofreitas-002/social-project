@@ -18,6 +18,10 @@ injectGlobal`
     @media (max-width: 720px) {
       font-size: 87.5%; //! 14px
     }
+    
+    @media (max-width: 425px) {
+      font-size: 81.25%;
+    }
   }
 
   //# REM = 1rem = font-size
