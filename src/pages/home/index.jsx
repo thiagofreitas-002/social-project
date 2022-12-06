@@ -15,7 +15,7 @@ export function Home() {
 
       <C.Button>
         <img src={HandClick} alt="" />
-        <Link to={'/test'}>Noticias</Link>
+        <Link to={'/test'}>Notícias</Link>
       </C.Button>
     </C.Container>
   )
