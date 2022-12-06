@@ -40,6 +40,12 @@ export const Container = styled.div`
     }
   }
 
+  .button-container{
+    position: absolute;
+    bottom: 45px;
+    right: 80px;
+  }
+
   @media (max-width: 425px) {
     .content {
       padding: 25px 30px;
