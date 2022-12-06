@@ -1,14 +1,14 @@
-import * as C from "./styles";
+import * as C from './styles'
 
-import HandClick from "../../assets/iconhandclick.png"; 
+import { Link } from 'react-router-dom'
+import { Home } from '../../pages/home'
+import HandClick from '../../assets/iconhandclick.png'
 
 export const Button = () => {
-    return(
-        <C.Container>
-            <img className="imgclick" src={HandClick} alt="" />
-            <C.Button>
-                NOTICIAS
-            </C.Button>
-        </C.Container>
-    )
+  return (
+    <C.Container>
+      <img src={HandClick} alt="" />
+      <Link to={'/test'}>Noticias</Link>
+    </C.Container>
+  )
 }
