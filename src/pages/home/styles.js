@@ -51,13 +51,20 @@ export const Container = styled.div`
       margin-left: 5rem;
 
       h1 {
-        font-size: 10.5rem;
+        font-size: 7.5rem;
       }
     }
   }
 
   @media (max-width: 425px) {
     .content {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 25px);
+      margin-left: 0;
+      padding-top: 0;
+
       .title {
         font-size: 2rem;
       }
@@ -65,6 +72,11 @@ export const Container = styled.div`
       h1 {
         font-size: 5.5rem;
       }
+    }
+
+    .button-container {
+      right: 50%;
+      transform: translateX(50%);
     }
   }
 `

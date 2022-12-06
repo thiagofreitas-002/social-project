@@ -10,6 +10,7 @@ export function Home() {
           BEM<span className="vindo">VINDO</span>
         </h1>
       </div>
+
       <div className="button-container">
         <Button />
       </div>

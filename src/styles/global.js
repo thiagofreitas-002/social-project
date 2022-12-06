@@ -11,7 +11,7 @@ injectGlobal`
 
   //? font:size: 16px; (Desktop)
   html {
-    @media (min-width: 1080px) {
+    @media (max-width: 1366px) {
       font-size: 93.75%; //! 15px
     }
 
