@@ -3,14 +3,13 @@ import background from '../../assets/bg.png'
 
 export const Container = styled.div`
   background-image: url(${background});
-  height: 100%;
+  min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
 
   .content {
-    position: absolute;
-    margin-left: 15%;
-    margin-top: 25%;
+    margin-left: 6.25rem;
+    padding-top: 1.5rem;
 
     h1 {
       text-align: left;
@@ -40,18 +39,25 @@ export const Container = styled.div`
     }
   }
 
-  .button-container{
+  .button-container {
     position: absolute;
     bottom: 45px;
     right: 80px;
   }
 
+  @media (max-width: 768px) {
+    .content {
+      margin-bottom: auto;
+      margin-left: 5rem;
+
+      h1 {
+        font-size: 10.5rem;
+      }
+    }
+  }
+
   @media (max-width: 425px) {
     .content {
-      padding: 25px 30px;
-      margin-top: 0;
-      margin-left: 0;
-
       .title {
         font-size: 2rem;
       }
