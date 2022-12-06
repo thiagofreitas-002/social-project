@@ -6,7 +6,9 @@ export const Notices = () => {
     <C.Container>
       <C.BoxContainer>
         <BoxText />
+        <BoxText />
       </C.BoxContainer>
+      <C.Menu />
     </C.Container>
   )
 }
