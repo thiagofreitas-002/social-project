@@ -4,7 +4,7 @@ export function Header() {
   return (
     <C.Container id="navbar">
       <C.Content>
-        <h1>Heade</h1>
+        <h1>Header</h1>
       </C.Content>
     </C.Container>
   )
