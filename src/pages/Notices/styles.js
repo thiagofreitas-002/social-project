@@ -1,31 +1,49 @@
 import styled from '@emotion/styled'
 
 export const Menu = styled.aside`
-  height: 740px;
-  width: 240px;
-  /* position: fixed;
-  top: 100px;
-  right: 84px; */
+  position: relative;
+  min-height: 40rem;
   background-color: #ff9900;
-  box-shadow: 26px 25px 0px 4px #005e1a;
-`
-
-export const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 200px;
-  gap: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 50px;
-  min-height: 100vh;
+  box-shadow: 0.5rem 0.5rem 0 #005e1a;
+  padding: 1rem 1.25rem;
 
   @media (max-width: 768px) {
-    padding: 0 30px;
+    min-height: 20rem;
+    padding: 1rem;
+  }
+`
+
+export const MenuContent = styled.div`
+  position: fixed;
+  width: 100%;
+  min-height: 10rem;
+  background: tomato;
+`
+
+export const Container = styled.main`
+  display: grid;
+  grid-template-columns: 1fr 12.5rem;
+  gap: 1rem;
+  max-width: 68.75rem;
+  margin: 0 auto;
+  padding: 0 3.125rem;
+  min-height: 100vh;
+  margin-bottom: 1.15rem;
+  padding-top: 5.5rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0 1.875rem;
+  }
+
+  @media (max-width: 420px) {
+    padding: 0 1.25rem;
   }
 `
 
 export const BoxContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 `

@@ -12,19 +12,19 @@ injectGlobal`
 
   //? font:size: 16px; (Desktop)
   html {
-    @media (max-width: 1440px) {
+    @media (max-width: 1024px) {
       font-size: 93.75%; //! 15px
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 768px) {
       font-size: 87.5%; //! 14px
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 425px) {
       font-size: 81.25%; //! 13px
     }
     
-    @media (max-width: 425px) {
+    @media (max-width: 300px) {
       font-size: 75%; //! 12px
     }
   }
@@ -52,13 +52,5 @@ injectGlobal`
   [disabled] {
     opacity: 0.6;
     cursor: not-allowed;
-  }
-
-  #root {
-    display: grid;
-    grid-template-areas: 
-    "header"
-    "main"
-    "footer";
   }
 `
