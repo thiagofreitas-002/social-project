@@ -32,6 +32,7 @@ export const HeaderTest = () => {
 
         const SchoolName = css`
           padding-top: 70px;
+          padding-left: 10rem;
           text-align: center;
         `;
     
@@ -64,7 +65,6 @@ export const HeaderTest = () => {
             <nav className="nav-bar">
                 <ul id="ulItens">
                     <a href="#about">Sobre</a>
-                    <a href="#help">Ajuda</a>
                 </ul>
             </nav>
         </C.Container>

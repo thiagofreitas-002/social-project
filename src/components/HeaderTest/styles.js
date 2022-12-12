@@ -31,7 +31,6 @@ export const Container = styled.div`
 
         text-transform: uppercase;
         
-        transition: all ease-out 300ms;
     }
 
     .nav-bar{
