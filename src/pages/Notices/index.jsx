@@ -98,7 +98,6 @@ export const Notices = () => {
       </C.Carrousel>
       <C.Container>
         <C.BoxContainer>
-          {/* Corrigir bug reveal não acontece */}
           <BoxText />
           <BoxText />
           <BoxText />
