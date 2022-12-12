@@ -2,11 +2,9 @@ import { Autoplay, Pagination, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCreative } from 'swiper'
 
-import { Palette } from 'react-palette'
-
-import ScrollReveal from 'scrollreveal'
 import { useEffect } from 'react'
 import { css } from '@emotion/css'
+import { Palette } from 'react-palette'
 
 import { BoxText } from './components/BoxText'
 import { Header } from '../../components/Header'
@@ -24,7 +22,7 @@ export const Notices = () => {
     let scroll = window.scrollY
 
     const NavHidden = css`
-      transform: translateY(calc(1 * var(--nav-height)));
+      transform: translateY(7.75rem);
     `
 
     window.addEventListener('scroll', () => {
@@ -34,6 +32,7 @@ export const Notices = () => {
         test.classList.remove(NavHidden)
       }
       scroll = window.scrollY
+      console.log(scroll)
     })
   }
 

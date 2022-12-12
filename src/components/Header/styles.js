@@ -4,11 +4,10 @@ export const Container = styled.header`
   position: fixed;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 50px;
+  justify-content: space-between;
+  padding: 0 3.125rem;
   top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   z-index: 100;
   background: #ff9900;
   transition: transform ease-out 300ms;
@@ -17,6 +16,10 @@ export const Container = styled.header`
     width: 10rem;
     aspect-ratio: 1/1;
     object-fit: cover;
+  }
+
+  & a {
+    transition: 200ms;
   }
 
   h1 {

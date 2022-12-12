@@ -66,7 +66,7 @@ export const Menu = styled.aside`
 
 export const MenuContent = styled.div`
   position: sticky;
-  top: 6.25rem;
+  top: 3.5rem;
   width: 100%;
   min-height: 10rem;
   background: tomato;

@@ -1,7 +1,8 @@
-import * as C from './styles'
-import Logo from '../../assets/logo-adolfo.png'
 import { css } from '@emotion/css'
 import { useEffect } from 'react'
+
+import Logo from '../../assets/logo-adolfo.png'
+import * as C from './styles'
 
 export function Header() {
   function handleScrollEffect() {
@@ -11,18 +12,20 @@ export function Header() {
 
     const NavHidden = css`
       transform: translateY(calc(-1 * var(--nav-height)));
-      min-height: 150px;
-      display: flex;
-      align-items: center;
+      max-height: 9.375rem;
+      justify-content: center !important;
     `
     const LogoNav = css`
-      display: none;
       opacity: 0;
       visibility: hidden;
+
+      img {
+        display: none;
+      }
     `
 
     const SchoolName = css`
-      padding-top: 70px;
+      padding-top: 4.375rem;
     `
 
     let lastScrollY = window.scrollY
@@ -47,13 +50,11 @@ export function Header() {
 
   return (
     <C.Container id="navbar">
-      <a href="/notices">
-        <img id="logo" src={Logo} />
+      <a href="/notices" id="logo">
+        <img src={Logo} />
       </a>
 
-      <div style={{}}>
-        <h1 id="schoolName">EEEP adolfo ferreira de sousa</h1>
-      </div>
+      <h1 id="schoolName">EEEP adolfo ferreira de sousa</h1>
     </C.Container>
   )
 }
