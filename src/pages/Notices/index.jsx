@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 import { css } from '@emotion/css'
 
 import { BoxText } from './components/BoxText'
-import { HeaderTest } from '../../components/HeaderTest'
+import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import * as C from './styles'
 
@@ -19,27 +19,6 @@ import 'swiper/css/pagination'
 import 'swiper/css'
 
 export const Notices = () => {
-  function reveal() {
-    window.effect = ScrollReveal({ reset: false })
-    const mods = {
-      duration: 200,
-      delay: 50,
-      distance: '100px',
-      easing: 'ease-in-out',
-      interval: 150,
-      opacity: 0,
-      scale: 0.75,
-      origin: 'bottom',
-      rotate: {
-        x: 100,
-        y: 0,
-        z: 0,
-      },
-    }
-
-    effect.reveal('.reveal', mods)
-  }
-
   function handleScrollY() {
     const test = document.getElementById('test')
     let scroll = window.scrollY
@@ -60,12 +39,11 @@ export const Notices = () => {
 
   useEffect(() => {
     handleScrollY()
-    reveal()
   }, [])
 
   return (
     <>
-      <HeaderTest />
+      <Header />
       <C.Carrousel>
         <Swiper
           slidesPerView={1}
@@ -121,28 +99,20 @@ export const Notices = () => {
       <C.Container>
         <C.BoxContainer>
           {/* Corrigir bug reveal não acontece */}
-          <BoxText className="reveal" />
-          <BoxText className="reveal" />
-          <BoxText className="reveal" />
-          <BoxText className="reveal" />
-          <BoxText className="reveal" />
-          <BoxText className="reveal" />
-          <BoxText className="reveal" />
-          <BoxText className="reveal" />
-          <BoxText className="reveal" />
-          <BoxText className="reveal" />
-          <BoxText className="reveal" />
+          <BoxText />
+          <BoxText />
+          <BoxText />
+          <BoxText />
+          <BoxText />
+          <BoxText />
+          <BoxText />
+          <BoxText />
+          <BoxText />
+          <BoxText />
+          <BoxText />
         </C.BoxContainer>
 
-        <C.Menu
-          className={
-            handleScrollY
-              ? ''
-              : css`
-                  top: 0;
-                `
-          }
-        >
+        <C.Menu>
           {/* Ajustar para quando houver um scrollY subir o MenuContent descer 4.25rem para baixo */}
           <C.MenuContent id="test">Testando</C.MenuContent>
         </C.Menu>
