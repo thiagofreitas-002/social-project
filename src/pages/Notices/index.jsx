@@ -1,5 +1,7 @@
 import { Autoplay, Pagination, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { EffectCreative } from 'swiper'
+
 import { Palette } from 'react-palette'
 
 import ScrollReveal from 'scrollreveal'
@@ -11,9 +13,10 @@ import { HeaderTest } from '../../components/HeaderTest'
 import { Footer } from '../../components/Footer'
 import * as C from './styles'
 
-import 'swiper/css'
-import 'swiper/css/pagination'
+import 'swiper/css/effect-creative'
 import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css'
 
 export const Notices = () => {
   function reveal() {
@@ -37,7 +40,26 @@ export const Notices = () => {
     effect.reveal('.reveal', mods)
   }
 
+  function handleScrollY() {
+    const test = document.getElementById('test')
+    let scroll = window.scrollY
+
+    const NavHidden = css`
+      transform: translateY(calc(1 * var(--nav-height)));
+    `
+
+    window.addEventListener('scroll', () => {
+      if (scroll > window.scrollY) {
+        test.classList.add(NavHidden)
+      } else {
+        test.classList.remove(NavHidden)
+      }
+      scroll = window.scrollY
+    })
+  }
+
   useEffect(() => {
+    handleScrollY()
     reveal()
   }, [])
 
@@ -46,19 +68,30 @@ export const Notices = () => {
       <HeaderTest />
       <C.Carrousel>
         <Swiper
-          spaceBetween={30}
+          slidesPerView={1}
           centeredSlides={true}
+          effect={'creative'}
+          loop={true}
           autoplay={{
-            delay: 2500,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           pagination={{
             clickable: true,
           }}
-          navigation={true}
-          modules={[Autoplay, Pagination, Navigation]}
+          creativeEffect={{
+            prev: {
+              shadow: true,
+              translate: ['-120%', 0, -500],
+            },
+            next: {
+              shadow: true,
+              translate: ['120%', 0, -500],
+            },
+          }}
+          navigation={false}
+          modules={[Autoplay, Pagination, Navigation, EffectCreative]}
           className={css`
-            min-height: 100%;
             width: 100%;
           `}
         >
@@ -73,11 +106,11 @@ export const Notices = () => {
           </SwiperSlide>
 
           <SwiperSlide>
-            <Palette src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/School-Clipart/School_Wallpaper.jpg?m=1434276765">
+            <Palette src="https://images.template.net/104281/back-to-school-chalkboard-background-x7ajc.jpg">
               {({ data, loading, error }) => {
                 return (
                   <div style={{ backgroundColor: data.vibrant }}>
-                    <C.Image imageSrc="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/School-Clipart/School_Wallpaper.jpg?m=1434276765" />
+                    <C.Image imageSrc="https://images.template.net/104281/back-to-school-chalkboard-background-x7ajc.jpg" />
                   </div>
                 )
               }}
@@ -85,10 +118,9 @@ export const Notices = () => {
           </SwiperSlide>
         </Swiper>
       </C.Carrousel>
-
       <C.Container>
         <C.BoxContainer>
-          //! Corrigir bug reveal não acontece
+          {/* Corrigir bug reveal não acontece */}
           <BoxText className="reveal" />
           <BoxText className="reveal" />
           <BoxText className="reveal" />
@@ -102,9 +134,17 @@ export const Notices = () => {
           <BoxText className="reveal" />
         </C.BoxContainer>
 
-        <C.Menu>
-          //! Ajustar para quando houver um scrollY subir o MenuContent descer 4.25rem para baixo
-          <C.MenuContent>Testando</C.MenuContent>
+        <C.Menu
+          className={
+            handleScrollY
+              ? ''
+              : css`
+                  top: 0;
+                `
+          }
+        >
+          {/* Ajustar para quando houver um scrollY subir o MenuContent descer 4.25rem para baixo */}
+          <C.MenuContent id="test">Testando</C.MenuContent>
         </C.Menu>
       </C.Container>
       <Footer />

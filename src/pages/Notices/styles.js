@@ -1,9 +1,12 @@
 import styled from '@emotion/styled'
 
 export const Carrousel = styled.div`
-  height: calc(80vh - 4.25rem);
   overflow: hidden;
   margin-top: 10rem;
+
+  @media (max-width: 420px) {
+    min-height: calc(50vh - 4.25rem);
+  }
 `
 
 export const Image = styled.div`
@@ -14,6 +17,10 @@ export const Image = styled.div`
   background-repeat: no-repeat;
   background-position: center center;
   background-image: url(${(props) => props.imageSrc});
+
+  @media (max-width: 420px) {
+    min-height: calc(50vh - 4.25rem);
+  }
 `
 
 export const Container = styled.main`
@@ -64,5 +71,5 @@ export const MenuContent = styled.div`
   min-height: 10rem;
   background: tomato;
 
-  transition: transform 300ms;
+  transition: transform 200ms;
 `

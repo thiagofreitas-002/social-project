@@ -9,7 +9,6 @@ export function Header() {
     const nav = document.querySelector('#navbar')
     const NavHidden = css`
       transform: translateY(calc(-1 * var(--nav-height)));
-      /* opacity: 0.8; */
     `
 
     let lastScrollY = window.scrollY
