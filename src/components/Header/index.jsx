@@ -2,6 +2,8 @@ import { useEffect } from 'react'
 import { css } from '@emotion/css'
 import * as C from './styles'
 
+import Logo from "../../assets/logo-adolfo.png"
+
 export function Header() {
   function handleScrollEffect() {
     const nav = document.querySelector('#navbar')
@@ -28,7 +30,7 @@ export function Header() {
 
   return (
     <C.Container id="navbar">
-      <h1>Header</h1>
+      <h1>HEADER</h1>
     </C.Container>
   )
 }

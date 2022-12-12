@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 export const Carrousel = styled.div`
   height: calc(80vh - 4.25rem);
   overflow: hidden;
-  margin-top: 4.25rem;
+  margin-top: 10rem;
 `
 
 export const Image = styled.div`

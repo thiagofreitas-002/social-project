@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 import { css } from '@emotion/css'
 
 import { BoxText } from './components/BoxText'
-import { Header } from '../../components/Header'
+import { HeaderTest } from '../../components/HeaderTest'
 import { Footer } from '../../components/Footer'
 import * as C from './styles'
 
@@ -43,7 +43,7 @@ export const Notices = () => {
 
   return (
     <>
-      <Header />
+      <HeaderTest />
       <C.Carrousel>
         <Swiper
           spaceBetween={30}

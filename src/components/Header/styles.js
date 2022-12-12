@@ -11,5 +11,7 @@ export const Container = styled.header`
   z-index: 100;
 
   background: hotpink;
+
   transition: transform ease-out 300ms;
+
 `

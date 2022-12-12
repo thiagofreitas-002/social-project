@@ -1,0 +1,63 @@
+import * as C from "./styles"
+import Logo from "../../assets/logo-adolfo.png"
+import { css } from '@emotion/css'
+import { useEffect } from "react"
+
+export const HeaderTest = () => {
+
+    function handleScrollEffect() {
+        const nav = document.querySelector('#navbar')
+        const logoHidden = document.querySelector("#logo")
+        const ulMargin = document.querySelector("#ulItens")
+
+        const NavHidden = css`
+          transform: translateY(calc(-1 * var(--nav-height)));
+          min-height: 150px;
+
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          /* opacity: 0.8; */
+        `
+        const LogoNav = css`
+            display: none;
+        `;
+
+        const UlNav = css`
+            padding-top: 70px; 
+            display: flex;
+            align-items: center;
+        `;
+    
+        let lastScrollY = window.scrollY
+        window.addEventListener('scroll', () => {
+          if (lastScrollY < window.scrollY) {
+            nav.classList.add(NavHidden)
+            logoHidden.classList.add(LogoNav)
+            ulMargin.classList.add(UlNav)
+          } else {
+              nav.classList.remove(NavHidden)
+              logoHidden.classList.remove(LogoNav)
+              ulMargin.classList.remove(UlNav)
+          }
+    
+          lastScrollY = window.scrollY
+        })
+      }
+    
+      useEffect(() => {
+        handleScrollEffect()
+      }, [])
+
+    return(
+        <C.Container id="navbar">
+            <a href="/notices"><img className="logo-header" id="logo" src={Logo}/></a>
+            <nav className="nav-bar">
+                <ul id="ulItens">
+                    <a href="#about">Sobre</a>
+                    <a href="#help">Ajuda</a>
+                </ul>
+            </nav>
+        </C.Container>
+    )
+}
