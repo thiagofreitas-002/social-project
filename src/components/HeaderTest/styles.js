@@ -2,11 +2,12 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div`
   position: fixed;
-  padding: 0 3.125rem;
+  padding: 0.5rem 3.125rem;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 50px;
 
   top: 0;
   left: 0;
@@ -17,38 +18,18 @@ export const Container = styled.div`
 
   transition: transform ease-out 300ms;
 
-    .logo-header{
-        width: 10rem;
-        height: 10rem;
+  .logo-header {
+    width: 10rem;
+    height: 10rem;
 
-        transition: all ease-out 300ms;
-    }
+    transition: all ease-out 300ms;
+  }
 
-    .school-name{
-        color: #005e1a;
+  .school-name {
+    color: #005e1a;
 
-        font-weight: 700;
+    font-weight: 700;
 
-        text-transform: uppercase;
-        
-    }
-
-    .nav-bar{
-        
-    }
-    ul{
-        display: flex;
-        align-items: center;
-        gap: 50px;
-    }
-
-    ul a{
-        color: #005e1a;
-        
-        font-weight: 700;
-        font-size: 1.20rem;
-        letter-spacing: 0.1rem;
-
-        text-transform: uppercase;
-    }
+    text-transform: uppercase;
+  }
 `;
