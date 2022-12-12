@@ -60,7 +60,7 @@ export const HeaderTest = () => {
     return(
         <C.Container id="navbar">
             <a href="/notices"><img className="logo-header" id="logo" src={Logo}/></a>
-            <h1 className="school-name" id="schoolName">EEEP adolfo ferreira de souza</h1>
+            <h1 className="school-name" id="schoolName">EEEP adolfo ferreira de sousa</h1>
             <nav className="nav-bar">
                 <ul id="ulItens">
                     <a href="#about">Sobre</a>
