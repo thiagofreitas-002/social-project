@@ -1,6 +1,9 @@
 import { injectGlobal } from '@emotion/css'
 
 injectGlobal`
+  :root {
+    --nav-height: 4.25rem;
+  }
 
   * {
     margin: 0;

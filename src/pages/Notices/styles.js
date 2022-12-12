@@ -1,23 +1,19 @@
 import styled from '@emotion/styled'
 
-export const Menu = styled.aside`
-  position: relative;
-  min-height: 40rem;
-  background-color: #ff9900;
-  box-shadow: 0.5rem 0.5rem 0 #005e1a;
-  padding: 1rem 1.25rem;
-
-  @media (max-width: 768px) {
-    min-height: 20rem;
-    padding: 1rem;
-  }
+export const Carrousel = styled.div`
+  height: calc(80vh - 4.25rem);
+  overflow: hidden;
+  margin-top: 4.25rem;
 `
 
-export const MenuContent = styled.div`
-  position: fixed;
+export const Image = styled.div`
+  object-fit: cover;
   width: 100%;
-  min-height: 10rem;
-  background: tomato;
+  min-height: calc(80vh - 4.25rem);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(${(props) => props.imageSrc});
 `
 
 export const Container = styled.main`
@@ -29,7 +25,7 @@ export const Container = styled.main`
   padding: 0 3.125rem;
   min-height: 100vh;
   margin-bottom: 1.15rem;
-  padding-top: 5.5rem;
+  margin-top: 1.15rem;
 
   @media (max-width: 768px) {
     display: flex;
@@ -46,4 +42,27 @@ export const BoxContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+`
+
+export const Menu = styled.aside`
+  position: relative;
+  min-height: 40rem;
+  background-color: #ff9900;
+  box-shadow: 0.5rem 0.5rem 0 #005e1a;
+  padding: 1rem 1.25rem;
+
+  @media (max-width: 768px) {
+    min-height: 20rem;
+    padding: 1rem;
+  }
+`
+
+export const MenuContent = styled.div`
+  position: sticky;
+  top: 1rem;
+  width: 100%;
+  min-height: 10rem;
+  background: tomato;
+
+  transition: transform 300ms;
 `
