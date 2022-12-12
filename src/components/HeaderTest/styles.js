@@ -20,6 +20,18 @@ export const Container = styled.div`
     .logo-header{
         width: 10rem;
         height: 10rem;
+
+        transition: all ease-out 300ms;
+    }
+
+    .school-name{
+        color: #005e1a;
+
+        font-weight: 700;
+
+        text-transform: uppercase;
+        
+        transition: all ease-out 300ms;
     }
 
     .nav-bar{

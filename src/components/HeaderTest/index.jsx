@@ -9,6 +9,7 @@ export const HeaderTest = () => {
         const nav = document.querySelector('#navbar')
         const logoHidden = document.querySelector("#logo")
         const ulMargin = document.querySelector("#ulItens")
+        const schoolName = document.querySelector("#schoolName")
 
         const NavHidden = css`
           transform: translateY(calc(-1 * var(--nav-height)));
@@ -28,6 +29,11 @@ export const HeaderTest = () => {
             display: flex;
             align-items: center;
         `;
+
+        const SchoolName = css`
+          padding-top: 70px;
+          text-align: center;
+        `;
     
         let lastScrollY = window.scrollY
         window.addEventListener('scroll', () => {
@@ -35,10 +41,12 @@ export const HeaderTest = () => {
             nav.classList.add(NavHidden)
             logoHidden.classList.add(LogoNav)
             ulMargin.classList.add(UlNav)
+            schoolName.classList.add(SchoolName)
           } else {
               nav.classList.remove(NavHidden)
               logoHidden.classList.remove(LogoNav)
               ulMargin.classList.remove(UlNav)
+              schoolName.classList.remove(SchoolName)
           }
     
           lastScrollY = window.scrollY
@@ -52,6 +60,7 @@ export const HeaderTest = () => {
     return(
         <C.Container id="navbar">
             <a href="/notices"><img className="logo-header" id="logo" src={Logo}/></a>
+            <h1 className="school-name" id="schoolName">EEEP adolfo ferreira de souza</h1>
             <nav className="nav-bar">
                 <ul id="ulItens">
                     <a href="#about">Sobre</a>
