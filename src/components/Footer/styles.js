@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 export const Container = styled.footer`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 10rem;
   padding: 0 3.125rem;
@@ -11,9 +11,8 @@ export const Container = styled.footer`
 
 export const Bloco = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  gap: 8px;
+  justify-content: space-between;
+  gap: 5rem;
 
   ul {
     display: flex;
@@ -22,5 +21,9 @@ export const Bloco = styled.div`
 
   h3 {
     font-size: 25px;
+  }
+
+  .bloco1{
+    
   }
 `
