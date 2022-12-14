@@ -24,16 +24,18 @@ export const Notices = () => {
     let scroll = window.scrollY
 
     const NavHidden = css`
-      transform: translateY(7.75rem);
+      transform: translateY(4.5rem);
     `
 
     window.addEventListener('scroll', () => {
-      if (scroll > window.scrollY && window.scrollX) {
-        test.classList.add(NavHidden)
-      } else {
-        test.classList.remove(NavHidden)
+      switch (scroll) {
+        case 0:
+          test?.classList.remove(NavHidden)
+          break
+        case 1:
+          test.classList.add(NavHidden)
+          break
       }
-      scroll = window.scrollY
     })
   }
 
@@ -121,10 +123,7 @@ export const Notices = () => {
           })}
         </C.BoxContainer>
 
-        <C.Menu>
-          {/* Ajustar para quando houver um scrollY subir o MenuContent descer 4.25rem para baixo */}
-          <C.MenuContent id="test">Testando</C.MenuContent>
-        </C.Menu>
+        <C.Menu></C.Menu>
       </C.Container>
       <Footer />
     </>

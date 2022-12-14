@@ -52,8 +52,7 @@ export const BoxContainer = styled.div`
 `
 
 export const Menu = styled.aside`
-  position: relative;
-  min-height: 40rem;
+  max-height: 45rem;
   background-color: #ff9900;
   box-shadow: 0.5rem 0.5rem 0 #005e1a;
   padding: 1rem 1.25rem;
@@ -62,14 +61,4 @@ export const Menu = styled.aside`
     min-height: 20rem;
     padding: 1rem;
   }
-`
-
-export const MenuContent = styled.div`
-  position: sticky;
-  top: 3.5rem;
-  width: 100%;
-  min-height: 10rem;
-  background: tomato;
-
-  transition: transform 200ms;
 `
