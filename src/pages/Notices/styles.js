@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 export const Carrousel = styled.div`
   overflow: hidden;
-  margin-top: 10rem;
+  margin-top: 7rem;
 
   @media (max-width: 420px) {
     min-height: calc(50vh - 4.25rem);
