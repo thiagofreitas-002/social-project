@@ -19,14 +19,10 @@ export function Footer() {
       <C.Bloco>
         <div className="bloco1">
           <h3>Navegue</h3>
-          <hr />
           <ul>
             <li>
               <a href="/">Home</a>
             </li>
-          </ul>
-
-          <ul>
             <li>
               <a href="/Perguntas">Perguntas(FAQ)</a>
             </li>
@@ -35,17 +31,16 @@ export function Footer() {
 
         <div className="bloco2">
           <h3>Contato</h3>
-          <hr />
           <ul>
             <li>
               <a href="">
-                <InstagramLogo size={32} />
+                <InstagramLogo size={32} color="#005e1a" />
               </a>
             </li>
 
             <li>
               <a href="">
-                <Envelope size={32} />
+                <Envelope size={32} color="#005e1a" />
               </a>
             </li>
           </ul>
