@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
+
 import * as C from './styles'
 
-export const BoxText = () => {
+export function BoxText({ title, paragraph }) {
   function reveal() {
     window.effect = ScrollReveal({ reset: false })
     const mods = {
@@ -29,8 +30,8 @@ export const BoxText = () => {
 
   return (
     <C.Container className="reveal">
-      <C.TitleBox>TITULO</C.TitleBox>
-      <C.TextBox>O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada.</C.TextBox>
+      <C.TitleBox>{title}</C.TitleBox>
+      <C.TextBox>{paragraph}</C.TextBox>
     </C.Container>
   )
 }

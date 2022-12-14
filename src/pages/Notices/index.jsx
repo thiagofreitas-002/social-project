@@ -2,10 +2,12 @@ import { Autoplay, Pagination, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCreative } from 'swiper'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { css } from '@emotion/css'
 import { Palette } from 'react-palette'
 
+import { api } from '../../services/api'
 import { BoxText } from './components/BoxText'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
@@ -32,12 +34,25 @@ export const Notices = () => {
         test.classList.remove(NavHidden)
       }
       scroll = window.scrollY
-      console.log(scroll)
     })
+  }
+
+  const [posts, setPosts] = useState([])
+
+  async function getData() {
+    try {
+      const response = await api.get('/comments').then((response) => {
+        console.log(response.data)
+        setPosts(response.data)
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   useEffect(() => {
     handleScrollY()
+    getData()
   }, [])
 
   return (
@@ -97,17 +112,13 @@ export const Notices = () => {
       </C.Carrousel>
       <C.Container>
         <C.BoxContainer>
-          <BoxText />
-          <BoxText />
-          <BoxText />
-          <BoxText />
-          <BoxText />
-          <BoxText />
-          <BoxText />
-          <BoxText />
-          <BoxText />
-          <BoxText />
-          <BoxText />
+          {posts.map(({ id, title, body, postId }) => {
+            return (
+              <Link key={id} to={`/notices/${postId}`}>
+                <BoxText title={title} paragraph={body} />
+              </Link>
+            )
+          })}
         </C.BoxContainer>
 
         <C.Menu>

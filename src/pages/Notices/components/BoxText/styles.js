@@ -3,9 +3,9 @@ import styled from '@emotion/styled'
 export const Container = styled.section`
   position: relative;
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 1.25rem;
   padding: 1.25rem 1.875rem;
   background: #005e1a;
