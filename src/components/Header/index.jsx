@@ -7,14 +7,14 @@ import * as C from './styles'
 export function Header() {
   function handleScrollY() {
     const nav = document.querySelector('#navbar')
-    console.log(nav)
-    // let scroll = window.scrollY
 
     const NavHidden = css`
       height: 4rem !important;
+      gap: 0rem !important;
 
       h1 {
-        margin: auto !important;
+        margin: 0 auto;
+        transition: 200ms;
       }
 
       & a img {
@@ -23,10 +23,10 @@ export function Header() {
     `
 
     window.addEventListener('scroll', () => {
-      switch (window.scrollY) {
+      let scroll = window.scrollY
+      switch (scroll) {
         case 0:
           nav?.classList.remove(NavHidden)
-          console.log('foi')
           break
         default:
           nav.classList.add(NavHidden)

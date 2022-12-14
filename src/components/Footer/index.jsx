@@ -1,35 +1,27 @@
-import * as C from "./styles";
-import Logo from "../../assets/logo_adolfo.png";
-import { InstagramLogo, Envelope } from "phosphor-react";
+import * as C from './styles'
+import Logo from '../../assets/logo_adolfo.png'
+import { InstagramLogo, Envelope } from 'phosphor-react'
+import { Link } from 'react-router-dom'
 
 export function Footer() {
   return (
     <C.Container>
-      <div>
-        <div>
-          <a href="notices">
-            <img
-              src={Logo}
-              style={{ width: "8rem", aspectRatio: 1 / 1, objectFit: "cover " }}
-            />
-          </a>
-        </div>
-      </div>
+      <Link to="/notices"></Link>
 
       <C.Bloco>
-        <div className="bloco1">
+        <C.OtherPages>
           <h3>Navegue</h3>
           <ul>
             <li>
-              <a href="/">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="/Perguntas">Perguntas(FAQ)</a>
+              <Link to="/perguntas">Perguntas(FAQ)</Link>
             </li>
           </ul>
-        </div>
+        </C.OtherPages>
 
-        <div className="bloco2">
+        <C.SocialMedia>
           <h3>Contato</h3>
           <ul>
             <li>
@@ -44,8 +36,8 @@ export function Footer() {
               </a>
             </li>
           </ul>
-        </div>
+        </C.SocialMedia>
       </C.Bloco>
     </C.Container>
-  );
+  )
 }
