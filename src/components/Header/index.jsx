@@ -1,51 +1,42 @@
 import { css } from '@emotion/css'
 import { useEffect } from 'react'
 
-import Logo from '../../assets/logo-adolfo.png'
+import Logo from '../../assets/logo_adolfo.png'
 import * as C from './styles'
 
 export function Header() {
-  function handleScrollEffect() {
+  function handleScrollY() {
     const nav = document.querySelector('#navbar')
-    const logoHidden = document.querySelector('#logo')
-    const schoolName = document.querySelector('#schoolName')
+    console.log(nav)
+    // let scroll = window.scrollY
 
     const NavHidden = css`
-      transform: translateY(calc(-1 * var(--nav-height)));
-      max-height: 9.375rem;
-      justify-content: center !important;
-    `
-    const LogoNav = css`
-      opacity: 0;
-      visibility: hidden;
+      height: 4rem !important;
 
-      img {
-        display: none;
+      h1 {
+        margin: auto !important;
+      }
+
+      & a img {
+        display: none !important;
       }
     `
 
-    const SchoolName = css`
-      padding-top: 4.375rem;
-    `
-
-    let lastScrollY = window.scrollY
     window.addEventListener('scroll', () => {
-      if (lastScrollY < window.scrollY) {
-        nav.classList.add(NavHidden)
-        logoHidden.classList.add(LogoNav)
-        schoolName.classList.add(SchoolName)
-      } else {
-        nav.classList.remove(NavHidden)
-        logoHidden.classList.remove(LogoNav)
-        schoolName.classList.remove(SchoolName)
+      switch (window.scrollY) {
+        case 0:
+          nav?.classList.remove(NavHidden)
+          console.log('foi')
+          break
+        default:
+          nav.classList.add(NavHidden)
+          break
       }
-
-      lastScrollY = window.scrollY
     })
   }
 
   useEffect(() => {
-    handleScrollEffect()
+    handleScrollY()
   }, [])
 
   return (

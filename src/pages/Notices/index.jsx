@@ -19,26 +19,6 @@ import 'swiper/css/pagination'
 import 'swiper/css'
 
 export const Notices = () => {
-  function handleScrollY() {
-    const test = document.getElementById('test')
-    let scroll = window.scrollY
-
-    const NavHidden = css`
-      transform: translateY(4.5rem);
-    `
-
-    window.addEventListener('scroll', () => {
-      switch (scroll) {
-        case 0:
-          test?.classList.remove(NavHidden)
-          break
-        case 1:
-          test.classList.add(NavHidden)
-          break
-      }
-    })
-  }
-
   const [posts, setPosts] = useState([])
 
   async function getData() {
@@ -53,7 +33,6 @@ export const Notices = () => {
   }
 
   useEffect(() => {
-    handleScrollY()
     getData()
   }, [])
 

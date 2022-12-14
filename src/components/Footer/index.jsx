@@ -1,5 +1,5 @@
 import * as C from "./styles";
-import Logo from "../../assets/logo-adolfo.png";
+import Logo from "../../assets/logo_adolfo.png";
 import { InstagramLogo, Envelope } from "phosphor-react";
 
 export function Footer() {

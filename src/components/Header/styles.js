@@ -11,12 +11,13 @@ export const Container = styled.header`
   height: 7rem;
   z-index: 100;
   background: #ff9900;
-  transition: transform ease-out 300ms;
+  transition: ease-out 500ms;
 
   & a img {
     width: 6rem;
     aspect-ratio: 1/1;
     object-fit: cover;
+    display: block;
   }
 
   & a {
@@ -27,5 +28,6 @@ export const Container = styled.header`
     color: #005e1a;
     font-weight: 600;
     text-transform: uppercase;
+    transition: all 0.2s ease-in !important;
   }
 `
