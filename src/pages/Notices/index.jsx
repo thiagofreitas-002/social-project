@@ -28,7 +28,7 @@ export const Notices = () => {
     `
 
     window.addEventListener('scroll', () => {
-      if (scroll > window.scrollY) {
+      if (scroll > window.scrollY && window.scrollX) {
         test.classList.add(NavHidden)
       } else {
         test.classList.remove(NavHidden)
