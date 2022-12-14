@@ -1,3 +1,12 @@
+
+# Comandos do github
+
+git config user.name ""
+git config user.email ""
+git remote remove origin
+git remote add "ssh do projeto"
+git push -u main
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
