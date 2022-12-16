@@ -25,13 +25,13 @@ export function Footer() {
           <h3>Contato</h3>
           <ul>
             <li>
-              <a href="">
+              <a href="https://www.instagram.com/adolfoferreiraoficial/">
                 <InstagramLogo size={32} color="#005e1a" />
               </a>
             </li>
 
             <li>
-              <a href="">
+              <a href="mailto:adolfofs@escola.ce.gov.br">
                 <Envelope size={32} color="#005e1a" />
               </a>
             </li>
