@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 //! Pages
 import { Home } from './pages/home'
 import { Notices } from './pages/Notices'
-import { NoticesDetails } from './components/NoticesDetails'
+import { NoticesDetails } from './pages/NoticesDetails'
 
 //! Layout
 import { DefaultLayout } from './layout/defaultLayout'

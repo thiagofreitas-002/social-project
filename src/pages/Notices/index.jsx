@@ -2,10 +2,10 @@
 import { Autoplay, Pagination, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCreative } from 'swiper'
-import { css } from '@emotion/css'
-import { Palette } from 'react-palette'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Palette } from 'react-palette'
+import { css } from '@emotion/css'
 
 import loadingImg from '../../assets/loading.gif'
 
@@ -130,7 +130,17 @@ export const Notices = () => {
             )
           })}
 
-          {loading || page > 1 || <img width="100" height="100" src={loadingImg} alt="loading" />}
+          {loading || page > 1 || (
+            <img
+              className={css`
+                margin: 0 auto;
+              `}
+              width="100"
+              height="100"
+              src={loadingImg}
+              alt="loading"
+            />
+          )}
         </C.BoxContainer>
         <C.Menu>Cardápio</C.Menu>
       </C.Container>
