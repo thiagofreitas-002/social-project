@@ -1,40 +1,68 @@
+//! Libs
 import { Autoplay, Pagination, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCreative } from 'swiper'
-
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { css } from '@emotion/css'
 import { Palette } from 'react-palette'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
-import { api } from '../../services/api'
-import { BoxText } from './components/BoxText'
+import loadingImg from '../../assets/loading.gif'
+
+//! Components
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
+import { Posts } from './components/Posts'
 import * as C from './styles'
 
+//! Styles
 import 'swiper/css/effect-creative'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css'
 
+import { api } from '../../services/api'
+
 export const Notices = () => {
   const [posts, setPosts] = useState([])
+  const [page, setPage] = useState(1)
+  const [totalPage, setTotalPage] = useState(0)
+  const [postsPage, setPostsPage] = useState(5)
+  const [loading, setLoading] = useState(true)
 
-  async function getData() {
+  async function getPostsData() {
+    setLoading(true)
     try {
-      const response = await api.get('/comments').then((response) => {
-        console.log(response.data)
-        setPosts(response.data)
+      const response = await api.get(`/comments?_page=${page}&_limit=${postsPage}`, { method: 'GET' }).then((response) => {
+        const data = response.data
+        setPosts([...posts, ...data])
+        setTotalPage(response.headers.get('X-total-count') / postsPage)
+        setLoading(false)
+        console.log(data)
       })
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.log(err)
     }
   }
 
+  function handleScroll() {
+    if (window.innerHeight + document.documentElement.scrollTop < document.documentElement.offsetHeight || page === totalPage || loading) {
+      return
+    }
+
+    setPage(page + 1)
+  }
+
   useEffect(() => {
-    getData()
-  }, [])
+    getPostsData()
+  }, [page])
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [loading])
 
   return (
     <>
@@ -91,18 +119,20 @@ export const Notices = () => {
           </SwiperSlide>
         </Swiper>
       </C.Carrousel>
+
       <C.Container>
         <C.BoxContainer>
-          {posts.map(({ id, title, body, postId }) => {
+          {posts.map((response) => {
             return (
-              <Link key={id} to={`/notices/${postId}`}>
-                <BoxText title={title} paragraph={body} />
+              <Link key={response.postId} to={`/notices/${response.postId}`}>
+                <Posts items={response} />
               </Link>
             )
           })}
-        </C.BoxContainer>
 
-        <C.Menu></C.Menu>
+          {loading || page > 1 || <img width="100" height="100" src={loadingImg} alt="loading" />}
+        </C.BoxContainer>
+        <C.Menu>Cardápio</C.Menu>
       </C.Container>
       <Footer />
     </>

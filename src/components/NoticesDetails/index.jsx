@@ -2,27 +2,9 @@ import * as C from './styles'
 import { useState, useEffect } from 'react'
 import { api } from '../../services/api'
 import { useParams } from 'react-router-dom'
-import { DiscussionEmbed, Recommendations } from 'disqus-react'
+import { DiscussionEmbed } from 'disqus-react'
 
 export function NoticesDetails() {
-  /* const [currentPost, setCurrentPost] = useState(null)
-  const params = useParams()
-
-  async function getData() {
-    try {
-      const response = await api.get('/comments').then((response) => {
-        console.log(response.data)
-        setCurrentPost(response.data)
-      })
-
-      response.find((post) => {
-        setCurrentPost(post)
-      })
-    } catch (error) {
-      console.log(error)
-    }
-  } */
-
   const [item, setItem] = useState([])
   const { postId } = useParams()
 
@@ -35,7 +17,6 @@ export function NoticesDetails() {
     } catch (error) {
       console.log(error)
     }
-    postId.toString(0)
   }, [])
 
   return (

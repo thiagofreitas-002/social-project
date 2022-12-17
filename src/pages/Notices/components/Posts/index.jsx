@@ -2,10 +2,10 @@ import { useEffect } from 'react'
 
 import * as C from './styles'
 
-export function BoxText({ title, paragraph }) {
+export function Posts({ items }) {
   function reveal() {
     window.effect = ScrollReveal({ reset: false })
-    const mods = {
+    effect.reveal('.reveal', {
       duration: 200,
       delay: 50,
       distance: '100px',
@@ -19,9 +19,7 @@ export function BoxText({ title, paragraph }) {
         y: 0,
         z: 0,
       },
-    }
-
-    effect.reveal('.reveal', mods)
+    })
   }
 
   useEffect(() => {
@@ -30,8 +28,8 @@ export function BoxText({ title, paragraph }) {
 
   return (
     <C.Container className="reveal">
-      <C.TitleBox>{title}</C.TitleBox>
-      <C.TextBox>{paragraph}</C.TextBox>
+      <C.TitleBox>{items.title}</C.TitleBox>
+      <C.TextBox>{items.body}</C.TextBox>
     </C.Container>
   )
 }

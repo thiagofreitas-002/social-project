@@ -60,5 +60,16 @@
       "body": "Post 10",
       "postId": 10
     }
+  ],
+
+  "images": [
+    {
+      "id": 0,
+      "source": "https://previews.123rf.com/images/marinamandarina/marinamandarina1708/marinamandarina170800003/84119394-back-to-school-textures-for-wallpaper-fills-web-page-background-.jpg"
+    },
+    {
+      "id": 1,
+      "source": "https://previews.123rf.com/images/marinamandarina/marinamandarina1708/marinamandarina170800003/84119394-back-to-school-textures-for-wallpaper-fills-web-page-background-.jpg"
+    }
   ]
 }
