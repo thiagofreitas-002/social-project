@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { api } from '../../services/api'
 import { useParams } from 'react-router-dom'
 import { DiscussionEmbed } from 'disqus-react'
+import Leftarrow from '../../assets/leftArrow.png'
 
 export function NoticesDetails() {
   const [item, setItem] = useState([])
@@ -21,7 +22,8 @@ export function NoticesDetails() {
 
   return (
     <C.Container>
-      <C.Content>
+      <C.Content> 
+        <a href="/Notices"> 👈 Voltar</a>
         <h1>{item.title}</h1>
         <p>{item.body}</p>
       </C.Content>

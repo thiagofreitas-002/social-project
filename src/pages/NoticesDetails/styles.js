@@ -11,4 +11,22 @@ export const Container = styled.div`
   justify-content: space-between;
 `
 
-export const Content = styled.div``
+export const Content = styled.div`
+a{
+    color: #000;
+    font-weight: 300;
+    padding: 6px;
+    margin-bottom: 60px;
+    margin-top: 60px;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    background: #ff9900;
+    text-transform: uppercase;
+}
+h1{
+  padding-top: 10px;
+}
+`
+
+
+
