@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
 export const Container = styled.section`
   position: relative;
@@ -10,9 +10,10 @@ export const Container = styled.section`
   padding: 1.25rem 1.875rem;
   background: #005e1a;
   min-height: 15rem;
+  border-radius: 0px 6px 6px 0px;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -1.25rem;
@@ -20,21 +21,21 @@ export const Container = styled.section`
     width: 0.875rem;
     background-color: #ff9900;
   }
-`
 
-export const TitleBox = styled.h1`
-  color: #fff;
+  h1 {
+    color: #fff;
 
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 3rem;
-  line-height: 80.4%;
-  letter-spacing: 0.01em;
-`
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 80.4%;
+    letter-spacing: 0.01em;
+  }
 
-export const TextBox = styled.p`
-  color: #fff;
-  font-size: 1.25rem;
-  letter-spacing: 0.01em;
-`
+  p {
+    color: #fff;
+    font-size: 1.25rem;
+    letter-spacing: 0.01em;
+  }
+`;

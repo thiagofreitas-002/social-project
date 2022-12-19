@@ -1,5 +1,5 @@
-import styled from '@emotion/styled'
-import Logo from '../../assets/logo_adolfo.png'
+import styled from "@emotion/styled";
+import Logo from "../../assets/logo_adolfo.png";
 
 export const Container = styled.footer`
   display: flex;
@@ -17,7 +17,7 @@ export const Container = styled.footer`
     background-size: contain;
     background-image: url(${Logo});
   }
-`
+`;
 
 export const Bloco = styled.div`
   display: flex;
@@ -32,13 +32,13 @@ export const Bloco = styled.div`
 
   h3 {
     font-size: 1.5rem;
-    color: #005e1a;
+    color: #fff;
   }
 
   a {
     color: #005e1a;
   }
-`
+`;
 
 export const OtherPages = styled.div`
   display: flex;
@@ -49,7 +49,7 @@ export const OtherPages = styled.div`
   ul {
     flex-direction: column;
   }
-`
+`;
 
 export const SocialMedia = styled.div`
   display: flex;
@@ -57,14 +57,21 @@ export const SocialMedia = styled.div`
   justify-content: space-between;
   gap: 1.25rem;
 
-  li {
-    display: inline-flex;
-    align-items: center;
-    width: 32px;
-    height: 32px;
-
-    a {
+  ul {
+    li {
       display: inline-flex;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+
+      a {
+        display: inline-flex;
+        transition: 200ms;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+      }
     }
   }
-`
+`;

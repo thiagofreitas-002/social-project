@@ -10,7 +10,7 @@ injectGlobal`
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    color: #9FADBD;
+    color: #fff;
   }
 
   //? font:size: 16px; (Desktop)

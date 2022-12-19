@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
 export const Container = styled.header`
   position: fixed;
@@ -13,11 +13,21 @@ export const Container = styled.header`
   background: #ff9900;
   transition: all ease-in-out 200ms;
 
+  @media (max-width: 768px) {
+    gap: 0px;
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
+    justify-content: center;
+    text-align: center;
+
+    a img {
+      display: none;
+    }
+  }
+
   & a img {
     width: 6rem;
     aspect-ratio: 1/1;
-    object-fit: cover;
-    display: block;
+    object-fit: contain;
   }
 
   h1 {
@@ -25,4 +35,4 @@ export const Container = styled.header`
     font-weight: 600;
     text-transform: uppercase;
   }
-`
+`;

@@ -56,9 +56,15 @@ export const Menu = styled.aside`
   background-color: #ff9900;
   box-shadow: 0.5rem 0.5rem 0 #005e1a;
   padding: 1rem 1.25rem;
+  border-radius: 6px;
 
   @media (max-width: 768px) {
     min-height: 20rem;
     padding: 1rem;
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+    color: white;
   }
 `
