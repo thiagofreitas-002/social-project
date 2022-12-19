@@ -32,10 +32,9 @@ const Content = styled.div`
 
 export function Notices() {
   const [posts, setPosts] = useState([]);
-  const [cardapio, setCardapio] = useState([]);
+  const [cardapio, setCardapio] = useState({});
 
   async function getPosts() {
-    try {
       const response = await apiProject.get(`/news`).then((response) => {
         const data = response.data;
         setPosts(data);
@@ -46,10 +45,9 @@ export function Notices() {
         const data = response.data;
         setCardapio(data);
         console.log(data);
+      }).catch((err) => {
+        setCardapio(err.response.data)
       });
-    } catch (err) {
-      console.log(err);
-    }
   }
 
   useEffect(() => {
@@ -147,7 +145,8 @@ export function Notices() {
           })}
         </C.BoxContainer>
         <C.Menu>
-          <h1>Cardápio do dia</h1>
+        <h1>Cardápio do dia</h1>
+          {cardapio.hasOwnProperty('message') ? <p>{cardapio.message}</p> :
           <dl>
             <dt>Café da manhã</dt>
             <dd>{cardapio.breakfest}</dd>
@@ -156,6 +155,8 @@ export function Notices() {
             <dt>Lanche da tarde</dt>
             <dd>{cardapio.afternoon_snack}</dd>
           </dl>
+          }
+
           
         </C.Menu>
       </C.Container>
