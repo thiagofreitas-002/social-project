@@ -148,13 +148,15 @@ export function Notices() {
         </C.BoxContainer>
         <C.Menu>
           <h1>Cardápio do dia</h1>
-          {cardapio.map((response) => {
-            return (
-              <Content key={response.id}>
-                <p>{response.breakfest}</p>
-              </Content>
-            );
-          })}
+          <dl>
+            <dt>Café da manhã</dt>
+            <dd>{cardapio.breakfest}</dd>
+            <dt>Almoço</dt>
+            <dd>{cardapio.lunch}</dd>
+            <dt>Lanche da tarde</dt>
+            <dd>{cardapio.afternoon_snack}</dd>
+          </dl>
+          
         </C.Menu>
       </C.Container>
       <Footer />

@@ -58,6 +58,14 @@ export const Menu = styled.aside`
   padding: 1rem 1.25rem;
   border-radius: 6px;
 
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin-bottom: 0.5rem;
+  }
+
   @media (max-width: 768px) {
     min-height: 20rem;
     padding: 1rem;
