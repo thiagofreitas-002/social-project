@@ -1,9 +1,9 @@
 import * as C from './styles'
 import { useState, useEffect } from 'react'
 import { api } from '../../services/api'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { DiscussionEmbed } from 'disqus-react'
-import Leftarrow from '../../assets/leftArrow.png'
+import { ArrowLeft } from 'phosphor-react'
 
 export function NoticesDetails() {
   const [item, setItem] = useState([])
@@ -22,8 +22,10 @@ export function NoticesDetails() {
 
   return (
     <C.Container>
-      <C.Content> 
-        <a href="/Notices"> 👈 Voltar</a>
+      <C.Content>
+        <Link to="/notices">
+          <ArrowLeft size={32} weight="bold" style={{ display: 'inline-block' }} color="#245633" /> Voltar
+        </Link>
         <h1>{item.title}</h1>
         <p>{item.body}</p>
       </C.Content>

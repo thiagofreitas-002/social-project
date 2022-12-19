@@ -12,21 +12,22 @@ export const Container = styled.div`
 `
 
 export const Content = styled.div`
-a{
+  min-height: 100vh;
+
+  a {
     color: #000;
     font-weight: 300;
-    padding: 6px;
-    margin-bottom: 60px;
-    margin-top: 60px;
+    padding: 0.375rem;
     font-size: 1.5rem;
     border-radius: 8px;
     background: #ff9900;
     text-transform: uppercase;
-}
-h1{
-  padding-top: 10px;
-}
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  h1 {
+    padding-top: 10px;
+  }
 `
-
-
-
