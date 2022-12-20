@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 export const Container = styled.section`
   position: relative;
@@ -12,8 +12,12 @@ export const Container = styled.section`
   min-height: 15rem;
   border-radius: 0px 6px 6px 0px;
 
+  @media (max-width: 425px) {
+    overflow: hidden;
+  }
+
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: -1.25rem;
@@ -25,7 +29,7 @@ export const Container = styled.section`
   h1 {
     color: #fff;
 
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 3rem;
@@ -37,5 +41,7 @@ export const Container = styled.section`
     color: #fff;
     font-size: 1.25rem;
     letter-spacing: 0.01em;
+    max-height: 9.3rem;
+    overflow: hidden;
   }
-`;
+`

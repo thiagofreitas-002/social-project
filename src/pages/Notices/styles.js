@@ -4,7 +4,7 @@ export const Carrousel = styled.div`
   overflow: hidden;
   margin-top: 7rem;
 
-  @media (max-width: 420px) {
+  @media (max-width: 425px) {
     min-height: calc(50vh - 4.25rem);
   }
 `
@@ -18,7 +18,7 @@ export const Image = styled.div`
   background-position: center center;
   background-image: url(${(props) => props.imageSrc});
 
-  @media (max-width: 420px) {
+  @media (max-width: 425px) {
     min-height: calc(50vh - 4.25rem);
   }
 `
@@ -37,10 +37,11 @@ export const Container = styled.main`
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column-reverse;
+    justify-content: flex-end;
     padding: 0 1.875rem;
   }
 
-  @media (max-width: 420px) {
+  @media (max-width: 425px) {
     padding: 0 1.25rem;
   }
 `
@@ -69,6 +70,7 @@ export const Menu = styled.aside`
   @media (max-width: 768px) {
     min-height: 20rem;
     padding: 1rem;
+    box-shadow: 0 0.5rem 0 #005e1a;
   }
 
   h1 {
