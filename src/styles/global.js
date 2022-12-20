@@ -1,8 +1,9 @@
-import { injectGlobal } from '@emotion/css'
+import { injectGlobal } from "@emotion/css";
 
 injectGlobal`
   :root {
     --nav-height: 4.25rem;
+    --yellow:rgba(255, 153, 0,0.88);
   }
 
   * {
@@ -56,4 +57,4 @@ injectGlobal`
     opacity: 0.6;
     cursor: not-allowed;
   }
-`
+`;

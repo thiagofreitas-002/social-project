@@ -1,18 +1,26 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
 export const Container = styled.div`
+  width: 100%;
+  background-color: var(--yellow);
+`;
+
+export const Content = styled.div`
   max-width: 68.75rem;
   padding: 0 3.125rem;
   min-height: 100vh;
   margin: 0 auto;
-  background: hotpink;
+  background: rgba(0, 94, 26);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`
 
-export const Content = styled.div`
   min-height: 100vh;
+
+  h1,
+  p {
+    color: #ffff;
+  }
 
   a {
     display: inline-flex;
@@ -40,4 +48,8 @@ export const Content = styled.div`
   h1 {
     padding-top: 10px;
   }
-`
+`;
+
+export const Comp = styled.div`
+  min-height: 100vh;
+`;
