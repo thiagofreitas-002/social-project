@@ -23,6 +23,7 @@ import "swiper/css/pagination";
 import "swiper/css";
 
 import { apiProject } from "../../services/api";
+import { Database } from "phosphor-react";
 
 const Content = styled.div`
   display: flex;
@@ -33,15 +34,31 @@ const Content = styled.div`
 
 export function Notices() {
   const [posts, setPosts] = useState([]);
+  const [page, setPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(0);
+  const POSTS_PER_PAGE = 5;
+  const [loading, setLoading] = useState(true);
+
   const [cardapio, setCardapio] = useState({});
   const [highlightPosts, setHighlightPosts] = useState([]);
 
   async function getPosts() {
-    const postsResponse = await apiProject.get(`/news`).then((response) => {
-      const data = response.data;
-      setPosts(data);
-      setHighlightPosts(data.slice(0, 3));
-    });
+    setLoading(true)
+    const postsResponse = await apiProject
+      .get(`/news?page=${page}&limit=${POSTS_PER_PAGE}`)
+      .then((response) => {
+        const data = response.data;
+
+        console.log(data)
+
+        setTotalPage(data.total_pages)
+        setPosts([...posts, ...data.data]);
+        setLoading(false)
+        
+        if (page == 1) {
+          setHighlightPosts(data.data.slice(0, 3));
+        }
+      });
 
     const menuResponse = await apiProject
       .get(`/menus/today`)
@@ -56,7 +73,25 @@ export function Notices() {
 
   useEffect(() => {
     getPosts();
-  }, []);
+  }, [page]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [loading]);
+
+  function handleScroll() {
+    if (
+      window.innerHeight + document.documentElement.scrollTop <
+        document.documentElement.offsetHeight ||
+      page == totalPage ||
+      loading
+    ) {
+      return;
+    }
+
+    setPage(page + 1)
+  }
 
   return (
     <>
@@ -93,7 +128,11 @@ export function Notices() {
           {highlightPosts.map((post, index) => {
             return (
               <SwiperSlide key={index}>
-                <HighlightPosts url={post.image} title={post.title} id={post.id}/>
+                <HighlightPosts
+                  url={post.image}
+                  title={post.title}
+                  id={post.id}
+                />
               </SwiperSlide>
             );
           })}
@@ -109,6 +148,7 @@ export function Notices() {
               </Link>
             );
           })}
+          {loading && (<p>Carregando...</p>)}
         </C.BoxContainer>
         <C.Menu>
           <h1>Cardápio do dia</h1>

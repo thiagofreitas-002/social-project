@@ -6,7 +6,7 @@ export function Posts({ items }) {
   function reveal() {
     window.effect = ScrollReveal({ reset: false })
     effect.reveal('.reveal', {
-      duration: 200,
+      duration: 20,
       delay: 50,
       distance: '100px',
       easing: 'ease-in-out',
