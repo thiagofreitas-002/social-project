@@ -3,8 +3,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative } from "swiper";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Palette } from "react-palette";
+import InfiniteScroll from "react-infinite-scroller";
 
 import { css } from "@emotion/css";
 import styled from "@emotion/styled";
@@ -24,6 +23,7 @@ import "swiper/css";
 
 import { apiProject } from "../../services/api";
 import { Database } from "phosphor-react";
+import { Link } from "react-router-dom";
 
 const Content = styled.div`
   display: flex;
@@ -35,31 +35,36 @@ const Content = styled.div`
 export function Notices() {
   const [posts, setPosts] = useState([]);
   const [page, setPage] = useState(1);
-  const [totalPage, setTotalPage] = useState(0);
   const POSTS_PER_PAGE = 5;
-  const [loading, setLoading] = useState(true);
+  const [totalPages, setTotalPages] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
 
   const [cardapio, setCardapio] = useState({});
   const [highlightPosts, setHighlightPosts] = useState([]);
 
   async function getPosts() {
-    setLoading(true)
     const postsResponse = await apiProject
       .get(`/news?page=${page}&limit=${POSTS_PER_PAGE}`)
       .then((response) => {
         const data = response.data;
+        console.log(data);
 
-        console.log(data)
-
-        setTotalPage(data.total_pages)
         setPosts([...posts, ...data.data]);
-        setLoading(false)
-        
+
         if (page == 1) {
           setHighlightPosts(data.data.slice(0, 3));
+          setTotalPages(data.total_pages);
+        }
+
+        setPage(page + 1);
+
+        if (page == data.total_pages) {
+          setHasMore(false);
         }
       });
+  }
 
+  async function getMenuToday() {
     const menuResponse = await apiProject
       .get(`/menus/today`)
       .then((response) => {
@@ -72,26 +77,8 @@ export function Notices() {
   }
 
   useEffect(() => {
-    getPosts();
-  }, [page]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [loading]);
-
-  function handleScroll() {
-    if (
-      window.innerHeight + document.documentElement.scrollTop <
-        document.documentElement.offsetHeight ||
-      page == totalPage ||
-      loading
-    ) {
-      return;
-    }
-
-    setPage(page + 1)
-  }
+    getMenuToday();
+  }, []);
 
   return (
     <>
@@ -141,14 +128,20 @@ export function Notices() {
 
       <C.Container>
         <C.BoxContainer>
-          {posts.map((response) => {
-            return (
-              <Link key={response.id} to={`/notices/${response.id}`}>
-                <Posts items={response} />
-              </Link>
-            );
-          })}
-          {loading && (<p>Carregando...</p>)}
+          <InfiniteScroll
+            pageStart={1}
+            loadMore={getPosts}
+            hasMore={hasMore}
+            loader={<p>Carregando</p>}
+          >
+            {posts.map((item) => (
+              <C.Margin key={item.id}>
+                <Link to={`/notices/${item.id}`}>
+                  <Posts items={item} />
+                </Link>
+              </C.Margin>
+            ))}
+          </InfiniteScroll>
         </C.BoxContainer>
         <C.Menu>
           <h1>Cardápio do dia</h1>

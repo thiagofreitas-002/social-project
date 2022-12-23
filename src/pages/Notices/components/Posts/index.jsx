@@ -27,8 +27,8 @@ export function Posts({ items }) {
   }, [])
 
   return (
-    <C.Container className="reveal">
-      <h1>{items.title}Title</h1>
+    <C.Container>
+      <h1>{items.title}</h1>
       <p>{items.description}</p>
     </C.Container>
   )

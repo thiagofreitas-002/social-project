@@ -78,3 +78,6 @@ export const Menu = styled.aside`
     color: white;
   }
 `
+export const Margin = styled.div`
+  margin-bottom: 1rem;
+`
