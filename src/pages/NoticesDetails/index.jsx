@@ -40,11 +40,12 @@ export function NoticesDetails() {
         <DiscussionEmbed
           shortname="test-ouqrdc3gfh"
           config={{
-            url: "http://localhost/notices",
+            url: "http://192.168.0.113:5173/notices",
             identifier: item.postId,
             title: item.title,
             language: "pt_BR",
           }}
+          key={item.postId}
         />
       </C.Content>
     </C.Container>

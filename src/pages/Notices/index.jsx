@@ -47,7 +47,6 @@ export function Notices() {
       .get(`/news?page=${page}&limit=${POSTS_PER_PAGE}`)
       .then((response) => {
         const data = response.data;
-        console.log(data);
 
         setPosts([...posts, ...data.data]);
 
