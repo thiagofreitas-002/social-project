@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-
 export const Container = styled.div`
   width: 100%;
   background-color: var(--yellow);
@@ -51,5 +50,27 @@ export const Content = styled.div`
 `;
 
 export const Comp = styled.div`
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
   min-height: 100vh;
+  font-family: Roboto;
+
+  #title {
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  hr {
+    margin: 0.5rem 0;
+  }
 `;

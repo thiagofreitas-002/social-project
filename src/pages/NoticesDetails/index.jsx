@@ -27,7 +27,7 @@ export function NoticesDetails() {
           <Link to="/notices">
             <ArrowLeft size={32} weight="bold" style={{ display: 'inline-block' }} color="#245633" /> Voltar
           </Link>
-          <h1>{item.title}</h1>
+          <h1 id='title'>{item.title}</h1>
           <p dangerouslySetInnerHTML={{__html: item.description}}></p>
         </C.Comp>
         <DiscussionEmbed shortname="test-ouqrdc3gfh" config={{ url: 'http://192.168.0.113:5173/notices', identifier: item.postId, title: item.title, language: 'pt_BR' }} key={item.id} />
