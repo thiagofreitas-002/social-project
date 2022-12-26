@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 import * as C from './styles'
 
-export function Posts({ items }) {
+export function Posts({ item }) {
   function reveal() {
     window.effect = ScrollReveal({ reset: false })
     effect.reveal('.reveal', {
@@ -28,8 +28,8 @@ export function Posts({ items }) {
 
   return (
     <C.Container>
-      <h1>{items.title}</h1>
-      <p>{items.description}</p>
+      <h1>{item.title}</h1>
+      <p dangerouslySetInnerHTML={{__html: item.description}}></p>
     </C.Container>
   )
 }
