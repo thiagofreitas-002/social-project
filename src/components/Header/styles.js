@@ -11,7 +11,27 @@ export const Container = styled.header`
   height: 7rem;
   z-index: 100;
   background: #ff9900;
-  transition: all ease-in-out 200ms;
+  transition: height 600ms;
+  
+
+
+  & a img {
+    width: 6rem;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    transition:  200ms;
+    margin-right: auto;
+    
+  }
+
+  h1 {
+    color: #005e1a;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: auto;
+    position: relative;
+    padding-right: 100px ;
+  }
 
   @media (max-width: 768px) {
     gap: 0px;
@@ -19,20 +39,6 @@ export const Container = styled.header`
     justify-content: center;
     text-align: center;
 
-    a img {
-      display: none;
-    }
-  }
-
-  & a img {
-    width: 6rem;
-    aspect-ratio: 1/1;
-    object-fit: contain;
-  }
-
-  h1 {
-    color: #005e1a;
-    font-weight: 600;
-    text-transform: uppercase;
+ 
   }
 `;

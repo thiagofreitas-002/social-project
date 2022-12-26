@@ -9,17 +9,19 @@ export function Header() {
     const nav = document.querySelector('#navbar')
 
     const NavHidden = css`
-      height: 4rem !important;
-      gap: 0rem !important;
 
-      h1 {
-        margin: 0 auto;
-        transition: 200ms;
-      }
+
+      height: 4rem !important;
+       gap: 0rem !important;
 
       & a img {
-        display: none !important;
+        
+      transform: translateX(60px);
+      transform: translateX(-300px);
+      
+
       }
+     
     `
 
     window.addEventListener('scroll', () => {
@@ -40,7 +42,7 @@ export function Header() {
   }, [])
 
   return (
-    <C.Container id="navbar">
+    <C.Container className='teste' id="navbar">
       <a href="/notices" id="logo">
         <img src={Logo} />
       </a>
