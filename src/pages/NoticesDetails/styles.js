@@ -36,8 +36,8 @@ export const Content = styled.div`
     transition: 200ms;
 
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    top: 1rem;
+    left: 1rem;
 
     &:hover {
       filter: brightness(0.9);
@@ -72,5 +72,9 @@ export const Comp = styled.div`
 
   hr {
     margin: 0.5rem 0;
+  }
+
+  img {
+    width: 100%;
   }
 `;

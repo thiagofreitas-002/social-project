@@ -1,37 +1,52 @@
-import * as C from './styles'
-import { useState, useEffect } from 'react'
-import { api, apiProject } from '../../services/api'
-import { Link, useParams } from 'react-router-dom'
-import { DiscussionEmbed } from 'disqus-react'
-import { ArrowLeft } from 'phosphor-react'
+import * as C from "./styles";
+import { useState, useEffect } from "react";
+import { api, apiProject } from "../../services/api";
+import { Link, useParams } from "react-router-dom";
+import { DiscussionEmbed } from "disqus-react";
+import { ArrowLeft } from "phosphor-react";
 
 export function NoticesDetails() {
-  const [item, setItem] = useState([])
-  const { postId } = useParams()
+  const [item, setItem] = useState([]);
+  const { postId } = useParams();
 
   useEffect(() => {
     try {
       apiProject.get(`/news/${postId}`).then((response) => {
-        const item = response.data
-        console.log(item)
-        setItem(item)
-      })
+        const item = response.data;
+        setItem(item);
+      });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }, [])
+  }, []);
+
   return (
     <C.Container>
       <C.Content>
         <C.Comp>
+          <img src={item.image} alt="" />
           <Link to="/notices">
-            <ArrowLeft size={32} weight="bold" style={{ display: 'inline-block' }} color="#245633" /> Voltar
+            <ArrowLeft
+              size={32}
+              weight="bold"
+              style={{ display: "inline-block" }}
+              color="#245633"
+            />{" "}
+            Voltar
           </Link>
-          <h1 id='title'>{item.title}</h1>
-          <p dangerouslySetInnerHTML={{__html: item.description}}></p>
+          <h1 id="title">{item.title}</h1>
+          <p dangerouslySetInnerHTML={{ __html: item.description }}></p>
         </C.Comp>
-        <DiscussionEmbed shortname="test-ouqrdc3gfh" config={{ url: 'http://192.168.0.113:5173/notices', identifier: item.postId, title: item.title, language: 'pt_BR' }} key={item.id} />
+        <DiscussionEmbed
+          shortname="test-ouqrdc3gfh"
+          config={{
+            url: "http://localhost/notices",
+            identifier: item.postId,
+            title: item.title,
+            language: "pt_BR",
+          }}
+        />
       </C.Content>
     </C.Container>
-  )
+  );
 }
