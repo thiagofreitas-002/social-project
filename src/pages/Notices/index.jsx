@@ -137,7 +137,7 @@ export function Notices() {
             {posts.map((item) => (
               <C.Margin key={item.id}>
                 <Link to={`/notices/${item.id}`}>
-                  <Posts items={item} />
+                  <Posts item={item} />
                 </Link>
               </C.Margin>
             ))}
