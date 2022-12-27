@@ -23,6 +23,7 @@ import 'swiper/css'
 import { apiProject } from '../../services/api'
 import { Link } from 'react-router-dom'
 import { Coffee, CookingPot, Hamburger } from 'phosphor-react'
+import { padding } from '@mui/system'
 
 export function Notices() {
   const [totalPages, setTotalPages] = useState(0)
@@ -126,7 +127,7 @@ export function Notices() {
         <C.Menu>
           <header>Cardápio do dia</header>
           {cardapio.hasOwnProperty('message') ? (
-            <p>{cardapio.message}</p>
+            <p style={{color: "#00A849", padding: "1rem"}}>{cardapio.message}</p>
           ) : (
             <C.Cards>
               <C.Breakfast>

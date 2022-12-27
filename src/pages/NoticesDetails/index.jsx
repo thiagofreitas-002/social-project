@@ -42,7 +42,7 @@ export function NoticesDetails() {
           </C.TextContent>
           <C.Comments>
             <Utterances
-              repo="arturbruno17/social-project"
+              repo="thiagofreitas-002/social-project"
               issueTerm="pathname"
               label=""
               theme="dark-blue"
