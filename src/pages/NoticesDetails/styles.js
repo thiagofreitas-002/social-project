@@ -77,3 +77,9 @@ export const Comp = styled.div`
 export const TextContent = styled.div`
   min-height: 50vh;
 `
+
+export const Comments = styled.div`
+  .utterances {
+    max-width: 100vw !important;
+  }
+`
