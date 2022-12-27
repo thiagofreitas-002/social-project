@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import * as C from "./styles";
+import { Link } from 'react-router-dom'
+import * as C from './styles'
 
 export function HighlightPosts(props) {
   return (
@@ -8,5 +8,5 @@ export function HighlightPosts(props) {
         <h1>{props.title}</h1>
       </C.Container>
     </Link>
-  );
+  )
 }

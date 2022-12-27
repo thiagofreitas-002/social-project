@@ -1,27 +1,25 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 export const Container = styled.header`
   position: fixed;
   display: flex;
   align-items: center;
-  gap: 2.5rem;
   padding: 0 3.125rem;
   top: 0;
   width: 100%;
   height: 7rem;
   z-index: 100;
   background: #ff9900;
-  transition: height 600ms;
-  
-
+  transition: 150ms ease-in-out;
 
   & a img {
     width: 6rem;
     aspect-ratio: 1/1;
     object-fit: contain;
-    transition:  200ms;
-    margin-right: auto;
-    
+    transition: 150ms ease-in-out;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   h1 {
@@ -30,7 +28,7 @@ export const Container = styled.header`
     text-transform: uppercase;
     margin: auto;
     position: relative;
-    padding-right: 100px ;
+    font-size: clamp(1.5rem, 3vw, 2rem);
   }
 
   @media (max-width: 768px) {
@@ -39,6 +37,8 @@ export const Container = styled.header`
     justify-content: center;
     text-align: center;
 
- 
+    img {
+      display: none;
+    }
   }
-`;
+`
