@@ -1,12 +1,45 @@
-import * as C from './styles'
-import Logo from '../../assets/logo_adolfo.png'
-import { InstagramLogo, Envelope } from 'phosphor-react'
-import { Link } from 'react-router-dom'
+import * as C from "./styles";
+import Logo from "../../assets/logo_adolfo.png";
+import { InstagramLogo, Envelope } from "phosphor-react";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
     <C.Container>
       <Link to="/notices"></Link>
+
+      <C.Copyright>
+        <p
+          onClick={() => {
+            const list = document.getElementById("ul");
+            document.getElementById("copyright").style.cursor = "default";
+            list.style.display = "grid";
+            list.style.cursor = "default";
+            setTimeout(() => {
+              list.style.transform = "scaleY(1)";
+            }, 50);
+          }}
+          id="copyright"
+        >
+          &copy; Turma de Informática 2020-2022
+        </p>
+        <ul id="ul">
+          <li class="list_item">Artur Bruno</li>
+          <li class="list_item">Antônio Vitor</li>
+          <li class="list_item">Fabrício</li>
+          <li class="list_item">Helyel</li>
+          <li class="list_item">João Marcelo</li>
+          <li class="list_item">João Matheus</li>
+          <li class="list_item">Kauã Martins</li>
+          <li class="list_item">Leo Maycom</li>
+          <li class="list_item">Matheus Castro</li>
+          <li class="list_item">Carlos Natanael</li>
+          <li class="list_item">João Pedro</li>
+          <li class="list_item">Thiago Freitas</li>
+          <li class="list_item">José Carlos</li>
+          <li class="list_item">Fernando Erikson</li>
+        </ul>
+      </C.Copyright>
 
       <C.Bloco>
         <C.OtherPages>
@@ -39,5 +72,5 @@ export function Footer() {
         </C.SocialMedia>
       </C.Bloco>
     </C.Container>
-  )
+  );
 }

@@ -94,3 +94,27 @@ export const SocialMedia = styled.div`
     }
   }
 `
+export const Copyright = styled.div`
+  padding: 0 2rem;
+
+  #copyright {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  .list_item {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    transform: scaleY(0);
+    transform-origin: top;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+
+    transition: 500ms;
+  }
+`
