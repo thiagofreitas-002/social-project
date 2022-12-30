@@ -24,20 +24,20 @@ export function Footer() {
           &copy; Turma de Informática 2020-2022
         </p>
         <ul id="ul">
-          <li class="list_item">Artur Bruno</li>
-          <li class="list_item">Antônio Vitor</li>
-          <li class="list_item">Fabrício</li>
-          <li class="list_item">Helyel</li>
-          <li class="list_item">João Marcelo</li>
-          <li class="list_item">João Matheus</li>
-          <li class="list_item">Kauã Martins</li>
-          <li class="list_item">Leo Maycom</li>
-          <li class="list_item">Matheus Castro</li>
-          <li class="list_item">Carlos Natanael</li>
-          <li class="list_item">João Pedro</li>
-          <li class="list_item">Thiago Freitas</li>
-          <li class="list_item">José Carlos</li>
-          <li class="list_item">Fernando Erikson</li>
+          <li className="list_item">Artur Bruno</li>
+          <li className="list_item">Antônio Vitor</li>
+          <li className="list_item">Fabrício</li>
+          <li className="list_item">Helyel</li>
+          <li className="list_item">João Marcelo</li>
+          <li className="list_item">João Matheus</li>
+          <li className="list_item">Kauã Martins</li>
+          <li className="list_item">Leo Maycom</li>
+          <li className="list_item">Matheus Castro</li>
+          <li className="list_item">Carlos Natanael</li>
+          <li className="list_item">João Pedro</li>
+          <li className="list_item">Thiago Freitas</li>
+          <li className="list_item">José Carlos</li>
+          <li className="list_item">Fernando Erikson</li>
         </ul>
       </C.Copyright>
 
