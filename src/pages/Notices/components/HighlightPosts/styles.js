@@ -17,5 +17,6 @@ export const Container = styled.div`
     left: 2rem;
     bottom: 2rem;
     font-size: clamp(1.5rem, 4vw, 4rem);
+    color: #fff;
   }
 `

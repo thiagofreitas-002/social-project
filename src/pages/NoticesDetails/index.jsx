@@ -26,6 +26,7 @@ export function NoticesDetails() {
     <C.Container>
       <C.Content>
         <img src={item.image} alt="" />
+        <h1 id="title">{item.title}</h1>
         <C.Comp>
           <Link to="/notices">
             <ArrowLeft
@@ -37,7 +38,6 @@ export function NoticesDetails() {
             Voltar
           </Link>
           <C.TextContent>
-            <h1 id="title">{item.title}</h1>
             <p dangerouslySetInnerHTML={{ __html: item.description }}></p>
           </C.TextContent>
           <C.Comments>

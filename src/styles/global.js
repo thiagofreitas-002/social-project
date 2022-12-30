@@ -1,9 +1,12 @@
 import { injectGlobal } from "@emotion/css";
 
 injectGlobal`
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
   :root {
     --nav-height: 4.25rem;
     --yellow:rgba(255, 153, 0,0.88);
+    --notices-datails-font: 'Open Sans', sans-serif;
   }
 
   * {
@@ -11,7 +14,6 @@ injectGlobal`
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    color: #fff;
   }
 
   //? font:size: 16px; (Desktop)

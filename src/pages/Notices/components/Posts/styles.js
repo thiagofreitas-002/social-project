@@ -80,7 +80,6 @@ export const Content = styled.div`
     font-size: clamp(1rem, 3vw, 1.4rem);
     line-height: 80.4%;
     letter-spacing: 0.01em;
-    text-transform: capitalize;
   }
 
   p {
@@ -90,6 +89,5 @@ export const Content = styled.div`
     letter-spacing: 0.01em;
     max-height: 9.3rem;
     overflow: hidden;
-    text-transform: capitalize;
   }
-`
+` 

@@ -1,21 +1,16 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 export const Container = styled.div`
-  background-color: var(--yellow);
-`
+  font-family: var(--notices-datails-font);
+`;
 
 export const Content = styled.div`
-  max-width: 75.75rem;
+  max-width: calc(2 / 3 * 100vw);
   min-height: 100vh;
   margin: 0 auto;
-  background: rgba(0, 94, 26);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  h1,
-  p {
-    color: #ffff;
-  }
+  align-items: center;
 
   a {
     display: inline-flex;
@@ -45,7 +40,6 @@ export const Content = styled.div`
     width: 100%;
     height: 50vh;
     object-fit: cover;
-    border-radius: 0 0 32px 32px;
     filter: blur(0.03rem);
     transition: 200ms;
 
@@ -53,33 +47,39 @@ export const Content = styled.div`
       filter: blur(0);
     }
   }
-`
-
-export const Comp = styled.div`
-  font-family: 'Roboto';
-  padding: 0.875rem 2.5rem;
 
   #title {
-    text-transform: capitalize;
+    color: #111111;
     font-weight: 700;
-    word-wrap: break-word;
-    font-size: 2.9rem;
+    font-size: 3.5rem;
+    margin: 1rem 0;
+    line-height: 3.875rem;
+    padding: 0 2rem;
     text-align: center;
-    margin-bottom: 1.5rem;
   }
+`;
 
-  p {
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-transform: capitalize;
-  }
-`
+export const Comp = styled.div`
+  padding: 0.875rem 2.5rem;
+  width: calc(1 / 2 * 100vw);
+
+`;
 export const TextContent = styled.div`
   min-height: 50vh;
-`
+
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+
+  a {
+    color: #245633;
+    text-decoration: underline;
+  }
+`;
 
 export const Comments = styled.div`
   .utterances {
     max-width: 100vw !important;
   }
-`
+`;
