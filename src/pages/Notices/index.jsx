@@ -38,6 +38,7 @@ export function Notices() {
   async function getPosts() {
     const postsResponse = await apiProject.get(`/news?page=${page}&limit=${POSTS_PER_PAGE}`).then((response) => {
       const data = response.data
+      console.log(data)
 
       setPosts([...posts, ...data.data])
 
