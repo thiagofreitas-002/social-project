@@ -1,0 +1,8 @@
+[phases.setup]
+cmds = ["npm install --force"]
+
+[phases.build]
+cmds = ["npm run build"]
+
+[phases.start]
+cmds = ["echo Started"]
