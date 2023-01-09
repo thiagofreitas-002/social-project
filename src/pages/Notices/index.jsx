@@ -103,7 +103,6 @@ export function Notices() {
           `}
         >
           {highlightPosts.map(({ image, title, id }, index) => {
-            console.log(id)
             return (
               <SwiperSlide key={index}>
                 <HighlightPosts url={image} title={title} id={id} />
