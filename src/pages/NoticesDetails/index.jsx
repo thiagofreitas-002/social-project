@@ -24,17 +24,14 @@ export function NoticesDetails() {
 
   return (
     <C.Container>
-      <img src={/* item.image */ 'https://cdn.waifu.im/6393.png'} alt="" />
+      <img src={item.image} alt="" />
 
       <C.Content>
-        <h1 id="title">
-          {item.title}
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, explicabo. Dolores tempora deleniti saepe consectetur distinctio amet vel, odit dicta, laborum iusto nam eveniet id voluptatibus quibusdam porro nisi tempore.
-        </h1>
+        <h1 id="title">{item.title}</h1>
 
         <C.Comp>
           <C.TextContent>
-            <p /* dangerouslySetInnerHTML={{ __html: item.description }} */>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae sequi ut doloribus explicabo, dicta vitae beatae expedita fuga earum corrupti modi fugiat harum perferendis autem quibusdam asperiores odit! Vero, porro.</p>
+            <p dangerouslySetInnerHTML={{ __html: item.description }}></p>
 
             <Link to="/notices">Home</Link>
           </C.TextContent>
