@@ -1,40 +1,6 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 export const Container = styled.div`
   font-family: var(--notices-datails-font);
-`;
-
-export const Content = styled.div`
-  max-width: calc(2 / 3 * 100vw);
-  min-height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #000;
-    font-weight: 500;
-    padding: 0.375rem;
-    font-size: 1.5rem;
-    border-radius: 8px;
-    background: #ff9900;
-    text-transform: uppercase;
-    transition: 200ms;
-
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-
-    &:hover {
-      filter: brightness(0.9);
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    }
-  }
 
   img {
     width: 100%;
@@ -47,39 +13,81 @@ export const Content = styled.div`
       filter: blur(0);
     }
   }
+`
+
+export const Content = styled.div`
+  max-width: 1368px;
+  padding: 0 2rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
   #title {
     color: #111111;
     font-weight: 700;
-    font-size: 3.5rem;
-    margin: 1rem 0;
-    line-height: 3.875rem;
+    font-size: clamp(1.65rem, 3vw, 3.5rem);
+    margin-bottom: 1rem;
     padding: 0 2rem;
     text-align: center;
   }
-`;
+
+  @media (max-width: 425px) {
+    padding: 0 0.5rem;
+  }
+`
 
 export const Comp = styled.div`
-  padding: 0.875rem 2.5rem;
-  width: calc(1 / 2 * 100vw);
+  padding: 0.875rem 1.75rem;
+  max-width: 1000px;
+  width: 100%;
+`
 
-`;
 export const TextContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
   min-height: 50vh;
 
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 1.875rem;
+  > p {
+    font-size: clamp(1.2rem, 3vw, 1.25rem);
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: #333333;
+  }
 
-  a {
+  > a {
     color: #245633;
     text-decoration: underline;
   }
-`;
+
+  > a[href='/notices'] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    color: #000;
+    font-weight: 500;
+    padding: 0.375rem;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    background: #ff9900;
+    text-transform: uppercase;
+    transition: 200ms;
+
+    &:hover {
+      filter: brightness(0.9);
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+`
 
 export const Comments = styled.div`
   .utterances {
     max-width: 100vw !important;
   }
-`;
+`
